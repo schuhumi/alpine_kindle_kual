@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "name": "Alpine Linux (no kterm!)",
+            "if": "\"kterm\" -ext!",
+            "items": [
+                {
+                    "name": "Install kterm extension (required)",
+                    "action": "sh get_kterm_fbink.sh"
+                }
+            ]
+        },
+        {
+            "name": "Alpine Linux",
+            "if": "\"kterm\" -ext",
+            "items": [
+                {
+                    "name": "Deploy newest release of Alpine Linux for Kindle",
+                    "action": "sh deploy_kterm.sh",
+                    "exitmenu": false
+                },
+                {
+                    "name": "Start Alpine Linux Desktop",
+                    "action": "sh start_gui.sh",
+                    "exitmenu": false
+                },
+                {
+                    "name": "Drop into Alpine Linux shell",
+                    "action": "sh drop_into_alpine.sh",
+                    "exitmenu": false
+                },
+                {
+                    "name": "Delete Alpine Linux",
+                    "action": "sh delete_kterm.sh",
+                    "exitmenu": false
+                }
+            ]
+        }
+    ]
+}

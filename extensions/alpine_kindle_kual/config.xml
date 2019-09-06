@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+  <information>
+    <name>alpine_kindle</name>
+    <version>0.1</version>
+    <author>schuhumi</author>
+    <id>alpine_kindle</id>
+  </information>
+  <menus>
+    <menu type="json" dynamic="true">menu.json</menu>
+  </menus>
+</extension>
