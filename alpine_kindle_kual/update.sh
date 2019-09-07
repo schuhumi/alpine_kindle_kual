@@ -1,9 +1,18 @@
 #!/bin/bash
 
-#!/bin/sh
-
 TMP_DOWNLOAD="/tmp/alpine_kindle_kual.zip"
 FOLDER_EXTENSIONS="/mnt/us/extensions/"
+
+press_any_key()
+{
+	echo "Press any key to continue"
+	while [ true ] ; do
+		read -t 3 -n 1
+		if [ $? = 0 ] ; then
+			exit
+		fi
+	done
+}
 
 DOWNLOAD_URL="$(curl -s https://api.github.com/repos/schuhumi/alpine_kindle_kual/releases/latest \
   | grep browser_download_url \
@@ -21,8 +30,10 @@ if curl -L $DOWNLOAD_URL --output $TMP_DOWNLOAD ; then
 	unzip -q -o $TMP_DOWNLOAD -d $FOLDER_EXTENSIONS
 	rm $TMP_DOWNLOAD
 	echo "Alpine Kindle KUAL Launcher installed"
+	press_any_key
 else
 	# failed
 	echo "Failed to download Alpine Kindle KUAL Launcher from $DOWNLOAD_URL"
+	press_any_key
 fi;
-sh press_any_key.sh
+
