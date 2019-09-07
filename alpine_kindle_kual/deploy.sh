@@ -25,6 +25,22 @@ deploy_alpine()
 		exit
 	fi;
 
+	echo "Checking Storage space"
+	B_REQUIRED="$(unzip -l /mnt/us/alpine.zip | tail -1 | cut -d' ' -f1)"
+	KB_REQUIRED="$((B_REQUIRED/1024))"
+	KB_FREE="$(df -k /mnt/us | awk '{print $4}' | tail -n -1)"
+	echo "Required: $KB_REQUIRED kb"
+	echo "Free: $KB_FREE kb"
+	PERCENTAGE_TO_BE_USED="$(($KB_REQUIRED*100/$KB_FREE))"
+	if [ "$PERCENTAGE_TO_BE_USED" -gt "99" ] ; then
+		echo "Error: Not enough free storage space!"
+		sh press_any_key.sh
+		lipc-set-prop com.lab126.powerd preventScreenSaver 0
+		exit
+	else
+		echo "Sufficient amount of free storage space available, will use $PERCENTAGE_TO_BE_USED% of that."
+	fi
+
 	echo "Extracting to /mnt/us"
 	echo "This can take a while, please be patient..."
 	sh unzip_progress.sh &
