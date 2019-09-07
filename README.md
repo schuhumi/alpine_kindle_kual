@@ -9,3 +9,10 @@
  - Start Alpine Linux Desktop (MATE)
  - Drop into a chroot shell
  - Delete Alpine Linux
+
+## Gettings started:
+
+ 1. Head over to the [releases page](https://github.com/schuhumi/alpine_kindle_kual/releases)
+ 2. Download the newest alpine_kindle_kual.zip
+ 3. Extract the zip, and copy the alpine_kindle_kual folder (inside "extensions") into the extensions folder on your jailbroken Kindle
+ 4. A "Alpine Linux" entry should be added to KUAL now. You are ready to deploy Alpine Linux
