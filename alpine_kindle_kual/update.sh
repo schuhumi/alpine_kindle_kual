@@ -5,9 +5,9 @@
 TMP_DOWNLOAD="/tmp/alpine_kindle_kual.zip"
 FOLDER_EXTENSIONS="/mnt/us/extensions/"
 
-DOWNLOAD_URL="$(curl -s https://api.github.com/schuhumi/alpine_kindle_kual/kterm/releases/latest \
+DOWNLOAD_URL="$(curl -s https://api.github.com/repos/schuhumi/alpine_kindle_kual/releases/latest \
   | grep browser_download_url \
-  | grep alpine_kindle_latest \
+  | grep alpine_kindle_kual.zip \
   | grep -v .zip.sig \
   | head -1 \
   | cut -d '"' -f 4)"
