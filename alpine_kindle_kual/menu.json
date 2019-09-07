@@ -33,6 +33,10 @@
                     "name": "Delete Alpine Linux",
                     "action": "sh delete_kterm.sh",
                     "exitmenu": false
+                },
+                {
+                    "name": "Update this Launcher",
+                    "action": "sh update_kterm.sh"
                 }
             ]
         }
