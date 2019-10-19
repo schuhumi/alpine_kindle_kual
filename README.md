@@ -16,3 +16,7 @@
  2. Download the newest alpine_kindle_kual.zip
  3. Extract the zip, and copy the alpine_kindle_kual folder into the extensions folder on your jailbroken Kindle
  4. A "Alpine Linux" entry should be added to KUAL now. You are ready to deploy Alpine Linux
+
+## Related projects
+
+* [LinuxDeploy](https://github.com/zaoqi/kual-linuxdeploy-armhf): A universal tool to get GNU/Linux running on modern Kindles
