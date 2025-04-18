@@ -62,7 +62,7 @@ deploy_alpine()
 
 
 if [ -f /mnt/us/alpine.ext3 ] ; then
-	echo "Error: alpine.ext already exists. If you want to update Alpine Linux to the latest release for Kindle, you need to delete it first. ATTENTION! This will delete all data inside Alpine!"
+	echo "Error: alpine.ext3 already exists. If you want to update Alpine Linux to the latest release for Kindle, you need to delete it first. ATTENTION! This will delete all data inside Alpine!"
 	echo "Press any key to go back to the menu where you have the option to delete."
 	sh press_any_key.sh
 exit
